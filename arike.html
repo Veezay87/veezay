@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You 🥰</title>
+    <style>
+        /* Reset some default browser styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Centered container with a soft gradient background */
+        .container {
+            text-align: center;
+            background: linear-gradient(45deg, #ff7eb9, #ff65a3, #ff81d1);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Styling the text */
+        h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+
+        /* Glowing effect on the text */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Button style */
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff4d88;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #ff3377;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="message">I Love You 🥰</h1>
+        <button class="btn" onclick="showMessage()">Click to Reveal Message</button>
+    </div>
+
+    <script>
+        // Function to display the message on button click
+        function showMessage() {
+            const messageElement = document.getElementById("message");
+            messageElement.innerHTML = "I Love You ARIKE ❤️🥰🫀"; // Change the message
+            messageElement.style.animation = "fadeIn 3s forwards"; // Trigger fade-in animation again
+        }
+    </script>
+</body>
+</html>
