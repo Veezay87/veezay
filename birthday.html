@@ -99,6 +99,23 @@
                 transform: translateY(0);
             }
         }
+
+        /* Play button styling */
+        .play-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: #e040fb;
+        }
     </style>
 </head>
 <body>
@@ -112,33 +129,39 @@
         <div class="confetti">
             <!-- Random confetti pieces will be added by JS -->
         </div>
+        <!-- Play Button to start audio -->
+        <button class="play-button" onclick="playAudio()">Play Birthday Song</button>
     </div>
 
     <!-- Birthday Song (Happy Birthday) -->
-    <audio id="birthday-song" autoplay loop>
+    <audio id="birthday-song">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Function to generate random confetti pieces
-            function generateConfetti() {
-                const confettiCount = 50; // Number of confetti pieces
-                const confettiContainer = document.querySelector('.confetti');
+        // Function to generate random confetti pieces
+        function generateConfetti() {
+            const confettiCount = 50; // Number of confetti pieces
+            const confettiContainer = document.querySelector('.confetti');
 
-                for (let i = 0; i < confettiCount; i++) {
-                    const confettiPiece = document.createElement('div');
-                    confettiPiece.classList.add('confetti-piece');
-                    confettiPiece.style.left = `${Math.random() * 100}%`;
-                    confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                    confettiContainer.appendChild(confettiPiece);
-                }
+            for (let i = 0; i < confettiCount; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.classList.add('confetti-piece');
+                confettiPiece.style.left = `${Math.random() * 100}%`;
+                confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confettiContainer.appendChild(confettiPiece);
             }
+        }
 
-            // Trigger confetti generation after page load
-            generateConfetti();
-        });
+        // Trigger confetti generation after page load
+        generateConfetti();
+
+        // Function to play audio when the button is clicked
+        function playAudio() {
+            const audio = document.getElementById('birthday-song');
+            audio.play(); // Play the audio
+        }
     </script>
 
 </body>
