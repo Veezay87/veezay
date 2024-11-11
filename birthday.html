@@ -13,9 +13,7 @@
         }
 
         body {
-            background-image: url('https://images.unsplash.com/photo-1543648297-000f92a6a33d'); /* Use a lovely birthday background image */
-            background-size: cover;
-            background-position: center;
+            background-color: #ffcc99; /* Soft birthday color */
             font-family: 'Arial', sans-serif;
             color: white;
             display: flex;
@@ -23,7 +21,7 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            opacity: 0; /* Start with the page hidden for the fade-in effect */
+            opacity: 1; /* Ensure it's visible */
             transition: opacity 2s ease-in-out;
         }
 
@@ -116,20 +114,20 @@
         </div>
     </div>
 
-    <audio id="birthday-music" loop autoplay>
+    <!-- Commenting out the audio tag for now -->
+    <!-- <audio id="birthday-music" loop autoplay>
         <source src="birthday_song.mp3" type="audio/mp3">
         Your browser does not support the audio element.
-    </audio>
+    </audio> -->
 
     <script>
         window.onload = function() {
-            const music = document.getElementById('birthday-music');
-            
-            // Fade in effect after the music starts
-            music.onplay = () => {
-                document.body.style.transition = "opacity 2s ease-in-out";
-                document.body.style.opacity = 1;
-            };
+            // If you enable the audio, it will fade in once the music starts.
+            // const music = document.getElementById('birthday-music');
+            // music.onplay = () => {
+            //     document.body.style.transition = "opacity 2s ease-in-out";
+            //     document.body.style.opacity = 1;
+            // };
         }
     </script>
 
