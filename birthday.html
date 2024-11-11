@@ -17,23 +17,26 @@
             height: 100vh;
             color: #fff;
             text-align: center;
+            overflow: hidden; /* Prevent scrollbars */
         }
 
         /* Main message container */
         .message {
-            font-size: 3em;
-            font-family: 'Courier New', Courier, monospace; /* Fancy font */
+            font-size: 4em;
+            font-family: 'Courier New', Courier, monospace; /* Artistic font */
             font-weight: bold;
             text-transform: uppercase;
             background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff8a00); /* Gradient text */
             background-clip: text;
             color: transparent; /* Make text transparent for the gradient to show */
-            animation: textAnimation 5s ease-in-out infinite; /* Animation for a smooth effect */
+            animation: textAnimation 6s ease-in-out infinite; /* Animation for text */
+            padding: 10px;
+            letter-spacing: 2px;
         }
 
         /* Heart Emoji Styling */
         .heart {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #e91e63; /* Heart color */
             animation: pulse 1.5s ease-in-out infinite; /* Heart animation */
         }
@@ -45,6 +48,7 @@
             color: #4caf50; /* Green for sub-message */
             margin-top: 20px;
             animation: fadeIn 2s ease-in-out; /* Sub-message fade-in effect */
+            padding: 0 20px;
         }
 
         /* Keyframe animations for text and heart */
@@ -64,6 +68,33 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+
+        /* Mobile-responsive font sizes */
+        @media (max-width: 768px) {
+            .message {
+                font-size: 3.2em; /* Adjust size for smaller screens */
+            }
+            .sub-message {
+                font-size: 1.3em; /* Adjust size for smaller screens */
+            }
+            .heart {
+                font-size: 1.5em; /* Adjust heart size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message {
+                font-size: 2.5em; /* Even smaller for very small screens */
+                padding: 5px;
+            }
+            .sub-message {
+                font-size: 1.2em;
+            }
+            .heart {
+                font-size: 1.3em;
+            }
+        }
+
     </style>
 </head>
 <body>
