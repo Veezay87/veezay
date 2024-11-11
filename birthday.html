@@ -3,132 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Happy Birthday My Love</title>
+    <title>Birthday Message</title>
     <style>
-        * {
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fce4ec; /* Light pink background */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #ffcc99; /* Soft birthday color */
-            font-family: 'Arial', sans-serif;
-            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
-            opacity: 1; /* Ensure it's visible */
-            transition: opacity 2s ease-in-out;
-        }
-
-        .container {
+            color: #fff;
             text-align: center;
-            animation: fadeIn 3s ease-out forwards;
         }
 
-        .message-box {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 15px;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transform: scale(0);
-            animation: scaleIn 2s ease-in forwards;
-        }
-
+        /* Main message container */
         .message {
-            font-size: 3rem;
+            font-size: 3em;
+            font-family: 'Courier New', Courier, monospace; /* Fancy font */
             font-weight: bold;
-            animation: bounceIn 2s ease-out infinite;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff8a00); /* Gradient text */
+            background-clip: text;
+            color: transparent; /* Make text transparent for the gradient to show */
+            animation: textAnimation 5s ease-in-out infinite; /* Animation for a smooth effect */
         }
 
+        /* Heart Emoji Styling */
+        .heart {
+            font-size: 1.5em;
+            color: #e91e63; /* Heart color */
+            animation: pulse 1.5s ease-in-out infinite; /* Heart animation */
+        }
+
+        /* Birthday sub-message styling */
         .sub-message {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            opacity: 0;
-            animation: fadeInText 2s ease-out forwards 1s;
-        }
-
-        .love {
-            font-size: 2rem;
-            margin-top: 20px;
-            color: #ff69b4;
+            font-size: 1.5em;
             font-style: italic;
-            opacity: 0;
-            animation: fadeInText 2s ease-out forwards 1.5s;
+            color: #4caf50; /* Green for sub-message */
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out; /* Sub-message fade-in effect */
         }
 
-        @keyframes bounceIn {
-            0% {
-                transform: translateY(-200px);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        /* Keyframe animations for text and heart */
+        @keyframes textAnimation {
+            0% { opacity: 0; transform: translateY(-20px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeInText {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="message-box">
-            <h1 class="message">Happy Birthday My Love!</h1>
-            <p class="sub-message">Cheers to more years of greater achievements!</p>
-            <p class="love">ILYSM ❤️</p>
-        </div>
+    <div class="message">
+        Happy Birthday My Love!
+        <br>
+        <span class="heart">❤️</span>
     </div>
 
-    <!-- Commenting out the audio tag for now -->
-    <!-- <audio id="birthday-music" loop autoplay>
-        <source src="birthday_song.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio> -->
+    <div class="sub-message">
+        Cheers to more years of greater achievements! <br> 
+        ILYSM <span class="heart">❤️</span>
+    </div>
 
     <script>
-        window.onload = function() {
-            // If you enable the audio, it will fade in once the music starts.
-            // const music = document.getElementById('birthday-music');
-            // music.onplay = () => {
-            //     document.body.style.transition = "opacity 2s ease-in-out";
-            //     document.body.style.opacity = 1;
-            // };
-        }
+        // JavaScript to dynamically update the heart emoji for more interactivity
+        const hearts = document.querySelectorAll('.heart');
+        hearts.forEach(heart => {
+            heart.addEventListener('click', function() {
+                heart.style.color = heart.style.color === 'rgb(233, 30, 99)' ? 'gold' : '#e91e63'; // Toggle heart color on click
+            });
+        });
     </script>
 
 </body>
